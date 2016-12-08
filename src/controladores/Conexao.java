@@ -26,5 +26,8 @@ public class Conexao {
         }
         return con;
     }
+    public void ExecutaSQL(){
+        
+    }
 
 }
