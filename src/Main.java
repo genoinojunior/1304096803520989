@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
         telaLogin loginsistema = new telaLogin();
         loginsistema.setVisible(true);
-
+        Conexao.ConectaBanco();
 
     }
 
