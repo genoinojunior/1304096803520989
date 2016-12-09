@@ -5,6 +5,9 @@
  */
 package interfaces;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author genoino.junior
@@ -68,6 +71,11 @@ public class adminCadastros extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jButtonAdicionar.setText("Adicionar");
+        jButtonAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAdicionarActionPerformed(evt);
+            }
+        });
 
         jButtonEditar.setText("Editar");
 
@@ -166,6 +174,43 @@ public class adminCadastros extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarActionPerformed
+        String usuario = jTextFieldUsuario.getText().trim();
+        String nome = jTextFieldNome.getText().trim();
+        String prop = jTextFieldPropriedade.getText().trim();
+        String senha = jTextFieldSenha.getText().trim();
+        String email = jTextFieldEmail.getText().trim();
+        String cpf = jTextFieldCpf.getText().trim();
+
+        if (usuario.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O campo usuário não pode ficar em branco");
+            jTextFieldUsuario.requestFocus();
+            return;
+        } else if (nome.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O campo nome não pode ficar em branco");
+            jTextFieldNome.requestFocus();
+            return;
+        } else if (prop.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O campo propriedade não pode ficar em branco");
+            jTextFieldPropriedade.requestFocus();
+            return;
+        } else if (senha.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "o campo senha não pode ficar em branco");
+            jTextFieldSenha.requestFocus();
+            return;
+        } else if (email.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O campo e-mail não pode ficar em branco");
+            jTextFieldEmail.requestFocus();
+            return;
+        } else if (cpf.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "o campo CPF não pode ficar em branco");
+            jTextFieldCpf.requestFocus();
+            return;
+        }
+
+
+    }//GEN-LAST:event_jButtonAdicionarActionPerformed
 
     /**
      * @param args the command line arguments
