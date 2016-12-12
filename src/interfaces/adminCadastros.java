@@ -247,6 +247,13 @@ public class adminCadastros extends javax.swing.JFrame {
         });
     }
 
+    public void keyPressed(KeyEvent e) {
+        // Vou testar para ver se a tecla pressionada foi o ENTER com a constante VK_ENTER  
+        if (e.getKeyCode() == KeyEvent.VK_TAB) {
+            JOptionPane.showMessageDialog(null, "Enter Pressionado");
+            jButtonAdicionar.doClick();
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdicionar;
     private javax.swing.JButton jButtonEditar;
