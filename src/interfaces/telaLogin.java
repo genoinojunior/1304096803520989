@@ -155,6 +155,17 @@ public class telaLogin extends javax.swing.JFrame {
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         String usuario = jTextFieldUsuario.getText();
         String senha = jPasswordFieldSenha.getText();
+        
+        if(usuario.trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "É necessário preencher o usuário");
+            jTextFieldUsuario.requestFocus();
+            return;
+        }
+        if(senha.trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "É necessário preencher a senha");
+            jPasswordFieldSenha.requestFocus();
+            return;
+        }
 
         telaPrincipal principal = new telaPrincipal();
         principal.setVisible(true);
